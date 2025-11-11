@@ -621,3 +621,32 @@ document.getElementById("simulateSnowball").addEventListener("click", () => {
   document.getElementById("results").classList.remove("d-none");
 });
 
+(function () {
+  const MOBILE_BREAK = 992; // Bootstrap md breakpoint (px)
+
+  function applyMobileBackgrounds() {
+    document.querySelectorAll('.article-card').forEach(card => {
+      const bg = card.dataset.bg;
+      if (!bg) return;
+
+      if (window.innerWidth < MOBILE_BREAK) {
+        // set background image for small screens
+        card.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url('${bg}')`;
+        // you may remove the linear-gradient if you prefer overlay only via ::before
+      } else {
+        // clear background for larger screens (desktop shows the <img>)
+        card.style.backgroundImage = '';
+      }
+    });
+  }
+
+  // initial run
+  applyMobileBackgrounds();
+
+  // update on resize (debounced)
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(applyMobileBackgrounds, 120);
+  });
+})();
