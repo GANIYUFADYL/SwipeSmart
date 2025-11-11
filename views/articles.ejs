@@ -1,0 +1,47 @@
+<%- include ('partials/header') %>
+    <section class="py-4 bg-black text-light">
+        <div class="container">
+
+            <div class="row">
+                <aside class="col-lg-3 d-none d-lg-block border-end border-secondary pe-4">
+                    <h6 class="text-uppercase text-secondary small mb-3">Related Articles</h6>
+
+                    <ul class="nav flex-column small">
+                        <% if (locals.blogPosts) { %>
+                            <% blogPosts.forEach(post=> { %>
+                                <li class="nav-item mb-2">
+                                    <a class="nav-link p-0 text-light" href="/article/<%= post.id %>">
+                                        <%= post.title %>
+                                    </a>
+                                </li>
+                                <% }) %>
+                                    <% } %>
+                    </ul>
+                </aside>
+
+                <article class="col-lg-9 ps-lg-5">
+                    <h1 class="fw-bold mb-2 text-light">
+                        <%= post.title %>
+                    </h1>
+
+                    <p class="text-secondary mb-3">
+                        <%= post.message %>
+                    </p>
+
+                    <div class="d-flex align-items-center mb-4 small text-secondary">
+                        <span>By Author • Updated Recently</span>
+                    </div>
+
+                    <div class="card shadow border-0 bg-secondary bg-opacity-10 mb-5">
+                        <img src="<%= post.image %>" class="card-img-top" />
+                    </div>
+
+                    <div class="text-light">
+                        <%- post.details %>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+    <%- include ('partials/footer') %>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    h1 {
+      position: relative;
+      opacity: 0;
+      animation: slideFade 1.3s ease forwards;
+    }
+
+    @keyframes slideFade {
+      0% {
+        left: -40px;
+        opacity: 0;
+      }
+
+      100% {
+        left: 0;
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #building {
+        align-self: center;
+        width: 250px;
+        height: 250px;
+      }
+    }
+
+    ;
+  </style>
+</head>
+
+<%- include ('partials/header') %>
+
+  <body>
+    <div class="container text-light py-3 mt-3" style="border-radius: 20px;">
+      <div class="row">
+        <div class="col-12 col-md-6 py-4">
+          <h1 class="display-5 fw-bold mb-3 lh-2">Mastering </br> the Art of Saving</h1>
+          <p class="lead col-lg-10">Saving isn't about how much you earn, it's about how much you keep. Take control
+            of your money and not the other way around. With smart saving habits, even small amounts can grow into big
+            wins over time.</br> Let's show you how to grow your savings, no matter your income.</p>
+        </div>
+        <div class="col-12 col-md-6">
+          <img src="../static/images/savingshero.jpg" height="400" width="500"
+            style="border-radius: 20px; margin: 20px;" />
+        </div>
+      </div>
+    </div>
+
+    <section class="container py-3 mt-4 text-light" id="cards">
+      <div class="row text-center">
+        <div class="col-12 col-md-4 mb-3" style="height: 100%">
+          <div
+            style="display:flex; justify-content: center; align-items: center; background: linear-gradient(to right, #7e0537 5%, #000000 100%); border-radius: 30px; min-height: 250px;">
+            <div
+              style="display: flex; flex-direction: column; align-items: center; height: 100%; text-align: center; justify-content: center;">
+              <h2 style="margin-bottom: 10px;">70%</h2>
+              <p style="margin: 0;">of Nigerians have no emergency savings.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 mb-3">
+          <div
+            style="display:flex; justify-content: center; align-items: center; background: linear-gradient(to right, #85038a 5%, #000000 100%); border-radius: 30px; height: 250px;">
+
+            <div
+              style="display: flex; flex-direction: column; height:100%; align-items:  center; text-align: center; justify-content: center;">
+              <h2 style="margin-bottom: 10px;">₦5000</h2>
+              <p style="margin: 0;">saved monthly for 12 months = #60,000 + interest</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 mb-3">
+          <div
+            style="display:flex; justify-content: center; align-items: center; background: linear-gradient(to right, #3d3d3d, #000000); border-radius: 30px; min-height: 250px;">
+
+            <div
+              style="display: flex; flex-direction: column; height:100%; align-items:  center; text-align: center; justify-content: center;">
+              <h2 style="margin-bottom: 10px;">₦500/day</h2>
+              <p style="margin: 0;">is all you need to build a 6-figure emergency fund in a year.</p>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <div class="container">
+      <div id="icon-grid">
+        <h2 class="pb-2 display-6 fw-bold mt-5" style="text-align: center;">Popular Saving Strategies</h2>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+
+          <div class="col">
+            <div class="d-flex align-items-start gap-3 mb-4">
+              <div class="flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.75em" height="1.75em" fill="currentColor"
+                  class="bi bi-compass" viewBox="0 0 16 16">
+                  <path
+                    d="M8 16.016a7.5 7.5 0 0 0 1.962-14.74A1 1 0 0 0 9 0H7a1 1 0 0 0-.962 1.276A7.5 7.5 0 0 0 8 16.016m6.5-7.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0" />
+                  <path d="m6.94 7.44 4.95-2.83-2.83 4.95-4.949 2.83 2.828-4.95z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="fw-bold mb-2 fs-5 text-light">50/30/20 Rule</h3>
+                <p class="mb-0 text-light">
+                  Save 20% of your income.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="d-flex align-items-start gap-3 mb-4">
+              <div class="flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.75em" height="1.75em" fill="currentColor"
+                  class="bi bi-slash-circle" viewBox="0 0 16 16">
+                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                  <path d="M11.354 4.646a.5.5 0 0 0-.708 0l-6 6a.5.5 0 0 0 .708.708l6-6a.5.5 0 0 0 0-.708" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="fw-bold mb-2 fs-5 text-light">Envelope Method</h3>
+                <p class="mb-0 text-light">
+                  Allocate cash into spending categories.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="d-flex align-items-start gap-3 mb-4">
+              <div class="flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.75em" height="1.75em" fill="currentColor"
+                  class="bi bi-piggy-bank" viewBox="0 0 16 16">
+                  <path
+                    d="M5 6.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0m1.138-1.496A6.6 6.6 0 0 1 7.964 4.5c.666 0 1.303.097 1.893.273a.5.5 0 0 0 .286-.958A7.6 7.6 0 0 0 7.964 3.5c-.734 0-1.441.103-2.102.292a.5.5 0 1 0 .276.962" />
+                  <path fill-rule="evenodd"
+                    d="M7.964 1.527c-2.977 0-5.571 1.704-6.32 4.125h-.55A1 1 0 0 0 .11 6.824l.254 1.46a1.5 1.5 0 0 0 1.478 1.243h.263c.3.513.688.978 1.145 1.382l-.729 2.477a.5.5 0 0 0 .48.641h2a.5.5 0 0 0 .471-.332l.482-1.351c.635.173 1.31.267 2.011.267.707 0 1.388-.095 2.028-.272l.543 1.372a.5.5 0 0 0 .465.316h2a.5.5 0 0 0 .478-.645l-.761-2.506C13.81 9.895 14.5 8.559 14.5 7.069q0-.218-.02-.431c.261-.11.508-.266.705-.444.315.306.815.306.815-.417 0 .223-.5.223-.461-.026a1 1 0 0 0 .09-.255.7.7 0 0 0-.202-.645.58.58 0 0 0-.707-.098.74.74 0 0 0-.375.562c-.024.243.082.48.32.654a2 2 0 0 1-.259.153c-.534-2.664-3.284-4.595-6.442-4.595Z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="fw-bold mb-2 fs-5 text-light">Pay Yourself First</h3>
+                <p class="mb-0 text-light">
+                  Automate saving before spending.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="d-flex align-items-start gap-3 mb-4">
+              <div class="flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.75em" height="1.75em" fill="currentColor"
+                  class="bi bi-list-check" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3.854 2.146a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 3.293l1.146-1.147a.5.5 0 0 1 .708 0m0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 7.293l1.146-1.147a.5.5 0 0 1 .708 0m0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="fw-bold mb-2 fs-5 text-light">Zero-Based Budgeting</h3>
+                <p class="mb-0 text-light">
+                  Account for every naira
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <section class="container py-4 text-light mb-3">
+        <div class="row">
+          <div class="col-12 col-md-6 mt-3">
+            <h2 class="mb-3 fw-bold display-6">Building the Habit</h2>
+            <ul class="ps-3">
+              <li>Set a savings goal (e.g., ₦100,000 in 6 months)</li>
+              <li>Open a separate account just for savings</li>
+              <li>Automate your deposits every payday</li>
+              <li>Use budgeting apps to track your spending</li>
+              <li>Cut non-essentials and redirect funds to savings</li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-6">
+            <img id="building" src="../static/images/buildingsavings.webp" height="225" width="450"
+              style="border-radius: 20px; margin: 20px;" />
+          </div>
+        </div>
+    </div>
+    </section>
+
+    <section id="savings-calculator" class="py-5 polka-bg text-white">
+      <div class="container">
+        <div class="text-center mb-4 reveal-up">
+          <h2 class="fw-bold">Savings Calculator</h2>
+          <p class="mb-0">Calculate your savings according to your goals and interest.</p>
+        </div>
+
+        <div class="row g-4 align-items-center">
+          <!-- LEFT: Form -->
+          <div class="col-12 col-lg-6 reveal-up">
+            <div class="card glass-card p-4">
+              <!-- Currency toggle -->
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <small class="text-success">Choose currency :</small>
+                <div class="btn-group" role="group" aria-label="currency switch">
+                  <button type="button" class="btn btn-outline-light currency-btn" data-symbol="₦"
+                    data-currency="USD">NGN</button>
+                  <button type="button" class="btn btn-outline-light active currency-btn" data-symbol="$"
+                    data-currency="USD">USD</button>
+                  <button type="button" class="btn btn-outline-light currency-btn" data-symbol="€"
+                    data-currency="EUR">EUR</button>
+                  <button type="button" class="btn btn-outline-light currency-btn" data-symbol="£"
+                    data-currency="GBP">GBP</button>
+                </div>
+              </div>
+
+              <!-- Inputs -->
+              <form id="calcForm" class="row g-3">
+                <div class="col-12">
+                  <label class="form-label visually-hidden" for="starting">Starting Balance</label>
+                  <input type="text" step="0.01" min="0" id="starting" class="form-control form-control-dark"
+                    placeholder="Starting Balance (e.g. 1,000)" />
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label visually-hidden" for="monthly">Monthly Contribution</label>
+                  <input type="text" step="0.01" min="0" id="monthly" class="form-control form-control-dark"
+                    placeholder="Monthly Contribution (e.g. 200)" />
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label visually-hidden" for="period">Period</label>
+                  <input type="number" min="0" id="period" class="form-control form-control-dark"
+                    placeholder="Period (number)" />
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label visually-hidden" for="periodUnit">Unit</label>
+                  <select id="periodUnit" class="form-select form-select-dark">
+                    <option value="months">Months</option>
+                    <option value="years" selected>Years</option>
+                  </select>
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label visually-hidden" for="rate">Annual interest rate (%)</label>
+                  <input type="number" step="0.01" min="0" id="rate" class="form-control form-control-dark"
+                    placeholder="Annual interest rate (%) e.g. 12" />
+                </div>
+
+                <div class="col-12 d-flex justify-content-start mt-3">
+                  <button id="calculateBtn" type="button"
+                    class="btn btn-success btn-lg rounded-pill px-4 text-light">Calculate</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-6">
+            <div class="card glass-card result-card p-5 text-center reveal-up">
+              <div class="mb-3 text-success">Your balance saving position</div>
+              <div class="display-6 fw-bold result-amount" aria-live="polite">$0.00</div>
+
+              <div class="row mt-4 gx-3">
+                <div class="col-6">
+                  <div class="small text-success">Total Contributed</div>
+                  <div class="fw-semibold small contrib-amount">$0.00</div>
+                </div>
+                <div class="col-6">
+                  <div class="small text-success">Total Interest Earned</div>
+                  <div class="fw-semibold small interest-amount">$0.00</div>
+                </div>
+              </div>
+
+              <div class="mt-4 text-white fst-italic fw-light small ">
+                Results assume monthly compounding and contributions at month end.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="text-center text-light py-5 mt-5"
+      style="background: linear-gradient(to right, rgb(28, 28, 28), black)">
+      <h2 class="fw-bold">Start Saving Today</h2>
+      <p class="lead">Small amounts over time lead to big results. Start now and thank yourself later.</p>
+      <a href="/budget" class="btn btn-outline-light btn-lg mt-3 rounded-5">Create a Target</a>
+    </section>
+
+  </body>
+  <%- include ('partials/footer') %>

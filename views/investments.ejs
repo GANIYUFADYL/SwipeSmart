@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    h1 {
+      position: relative;
+      opacity: 0;
+      animation: slideFade 1.3s ease forwards;
+    }
+
+    @keyframes slideFade {
+      0% {
+        left: -40px;
+        opacity: 0;
+      }
+
+      100% {
+        left: 0;
+        opacity: 1;
+      }
+    }
+    @media (max-width: 768px) {
+      #investChart {
+        width: 100% !important;
+        height: 300px !important;
+      }
+    }
+  </style>
+</head>
+<%- include ('partials/header') %>
+  <div class="px-4 pt-2 my-3 text-center border-bottom">
+    <h1 class="display-4 fw-bold text-light">Let Your Money Work for You</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4 mt-3">Investing allows your money to grow over time through compound interest, capital gains,
+        and dividends. Unlike saving, which preserves money, investing multiplies it.</p>
+    </div>
+    <div class="overflow-hidden" style="max-height: 35vh;">
+      <div class="container">
+        <img src="../static/images/investment hero.jpg" class="img-fluid rounded-3 shadow-lg" alt="investing image"
+          width="700" height="500" loading="lazy">
+      </div>
+    </div>
+
+    <div class="container my-5" style="max-height: 150vh;">
+      <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg"
+        style="background: linear-gradient(to right, #161616, #000000); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(6px);">
+        <div class="col-lg-6 p-3 p-lg-5 pt-lg-3">
+          <h1 class="display-5 fw-bold lh-1 text-light mb-4 pt-0">Investments vs. Savings</h1>
+          <p class="lead text-light">
+            60% of adults in Nigeria rely solely on savings accounts and do not invest at all.
+            But what they don't know is, those who invest and consistently contribute monthly even as low as ₦5,000
+            can build over ₦3.5M in 10 years with a modest 10% average return.
+          </p>
+        </div>
+
+        <div class="col-lg-6">
+          <div style="background: #1a1a1a; padding: 20px; border-radius: 12px;">
+            <p class="fw-bold lh-1 text-light mb-4 pt-0">10 Year Comparison: Savings vs. Investments</p>
+            <canvas id="investChart" style="width:100%; height: 400px;"></canvas>
+            <p class="mt-3 text-light" style="font-style: italic; font-size: 1rem;">
+              <strong>Insight:</strong> After 10 years, an investor ends up with over <strong>₦2.4M</strong>, while a
+              saver stops at <strong>₦1.2M</strong>.
+              That’s <strong>double the result</strong> just by letting your money grow.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Load Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4"></script>
+
+
+    <div class="quiz-container reveal-up">
+      <div class="quiz-header">
+        <h1>Risk Tolerance Quiz</h1>
+        <p class="subtitle">Discover your investment style</p>
+      </div>
+
+      <div class="quiz-content" id="quiz"></div>
+    </div>
+
+    <div class="company-container mt-3 py-3">
+      <div class="mb-3 py-3">
+        <h3 class="display-6 fw-bold">Trusted Platforms</h3>
+      </div>
+      <div class="row">
+        <div class="col-md-3 mb-5">
+          <a href="https://investbamboo.com/">
+            <img src="../static/images/bamboo.png" height="50" width="180" /> </a>
+        </div>
+        <div class="col-md-3 mb-5">
+          <a href="https://www.trovefinance.com/">
+            <img src="../static/images/trove.png" height="75" width="250" />
+          </a>
+        </div>
+        <div class="col-md-3 mb-5">
+          <a href="https://www.afrinvest.com/">
+            <img src="../static/images/afrinvest.png" height="75" width="250" />
+          </a>
+        </div>
+        <div class="col-md-3 mb-5">
+          <a href="https://chaka.com/">
+            <img src="../static/images/chaka.png" height="75" width="250" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <%- include ('partials/footer') %>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @media (max-width: 768px) {
+      #debt-image {
+        height: 300px;
+        width: 300px;
+        object-fit: cover;
+        margin-left: 20px;
+
+      }
+    }
+
+    h1 {
+      position: relative;
+      opacity: 0;
+      animation: slideFade 1.3s ease forwards;
+    }
+
+    @keyframes slideFade {
+      0% {
+        left: -40px;
+        opacity: 0;
+      }
+
+      100% {
+        left: 0;
+        opacity: 1;
+      }
+    }
+
+    .card {
+      background: linear-gradient(to right top, rgb(30, 30, 30) 10%, black 70%);
+      min-height: 250px;
+    }
+
+    .infinity-scroll-section {
+      background-color: #080808;
+      padding: 3rem 1rem;
+      color: #fff;
+      overflow: hidden;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .scroll-title {
+      font-size: 2rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 2rem;
+    }
+
+    /* Outer Scroll Wrapper */
+    .scroll-wrapper {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    /* Track that scrolls horizontally */
+    .scroll-track {
+      display: flex;
+      width: max-content;
+      animation: scroll-left 40s linear infinite;
+    }
+
+    /* Stat Cards */
+    .stat-card {
+      flex: 0 0 auto;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 0 1rem;
+      min-width: 220px;
+      max-width: 220px;
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #fff;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      text-align: center;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+      transition: transform 0.3s;
+    }
+
+    .stat-card span {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: normal;
+      color: #bbb;
+    }
+
+    /* Scroll Animation */
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .stat-card {
+        min-width: 180px;
+        font-size: 1.2rem;
+      }
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
+      color: #fff;
+    }
+
+    .feature-section {
+      padding: 3rem 1rem;
+      background: linear-gradient(to bottom right, #000000, #000000);
+    }
+
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Image Section */
+    .feature-image-wrap {
+      flex: 1 1 400px;
+      text-align: center;
+    }
+
+    .feature-image {
+      max-width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.08);
+    }
+
+    /* Content Section */
+    .feature-content {
+      flex: 1 1 500px;
+    }
+
+    .feature-title {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #ddd;
+      text-align: left;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .feature-card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.04);
+      transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
+    }
+
+    .feature-card h3 {
+      margin: 0 0 0.5rem;
+      color: #fff;
+      font-size: 1.1rem;
+    }
+
+    .feature-card p {
+      margin: 0;
+      color: #bbb;
+      font-size: 0.95rem;
+    }
+
+    /* Responsive Layout */
+    @media (max-width: 768px) {
+      .feature-grid {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .feature-content {
+        text-align: center;
+      }
+
+      .feature-title {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<%- include ('partials/header') %>
+  <div class="container">
+    <div class="row g-lg-5 py-3">
+      <div class="col-lg-6 text-center text-lg-start">
+        <h1 class="display-5 fw-bold text-white mb-3">Break Free from the Weight of Debt</h1>
+        <p class="fs-5 mb-4 text-light">Debt doesn’t have to control your life. Whether it’s credit cards, loans, or
+          unexpected bills, you can take clear, confident steps toward freedom. Understanding your debt and creating a
+          strategy to manage it puts you back in charge of your financial future.</p>
+      </div>
+      <div class="col-md-10 mx-auto col-lg-5">
+        <img id="debt-image" src="../static/images/debtmgm.jpg" height="400" width="400"
+          style="border-radius: 20px; object-fit: cover;">
+      </div>
+    </div>
+  </div>
+
+  <section class="infinity-scroll-section">
+    <h2 class="scroll-title">Why It Matters: The Debt Reality</h2>
+    <div class="scroll-wrapper">
+      <div class="scroll-track">
+
+        <div class="stat-card">₦38 trillion<br><span>Consumer debt in Nigeria (2024)</span></div>
+        <div class="stat-card">68%<br><span>With multiple active loans</span></div>
+        <div class="stat-card">1 in 3<br><span>Unaware of interest terms</span></div>
+        <div class="stat-card">30–50%<br><span>Income spent on debt servicing</span></div>
+        <div class="stat-card">#1 cause<br><span>Financial anxiety & missed goals</span></div>
+
+
+        <div class="stat-card">₦38 trillion<br><span>Consumer debt in Nigeria (2024)</span></div>
+        <div class="stat-card">68%<br><span>With multiple active loans</span></div>
+        <div class="stat-card">1 in 3<br><span>Unaware of interest terms</span></div>
+        <div class="stat-card">30–50%<br><span>Income spent on debt servicing</span></div>
+        <div class="stat-card">#1 cause<br><span>Financial anxiety & missed goals</span></div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="feature-section">
+    <div class="feature-grid">
+
+      <div class="feature-image-wrap">
+        <img src="../static/images/benefits.avif" alt="Debt Management Illustration" class="feature-image" />
+      </div>
+
+
+      <div class="feature-content">
+        <h2 class="feature-title">Smart Debt Management Starts Here</h2>
+
+        <div class="feature-list">
+          <div class="feature-card">
+            <h3>Understand Your Debt</h3>
+            <p>Break down what you owe, the types of debt you hold, and how interest impacts repayment over time.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Create a Repayment Strategy</h3>
+            <p>Use proven methods like the debt snowball or avalanche to pay down what you owe efficiently and
+              sustainably.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Track Your Progress</h3>
+            <p>Stay motivated by monitoring how much you've paid off. Use our downloadable trackers and templates.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Build Better Habits</h3>
+            <p>Identify spending patterns and use budgeting tools to prevent new debt from forming.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Seek Support Without Shame</h3>
+            <p>Debt can be isolating, but you're not alone. Learn from others, ask questions, and reach out when you
+              need help.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="debt-section py-5 reveal-up">
+    <div class="container">
+
+      <div class="text-center mb-5">
+        <h2 class="fw-bold text-gradient">Debt Snowball Planner</h2>
+        <p class="text-secondary mb-0">
+          List your debts, visualize your plan, and estimate when you can become debt-free.
+        </p>
+      </div>
+
+      <div class="card glass-card border-0 rounded-4 p-4 shadow-sm mb-4">
+        <h5 class="text-light mb-3"><i class="bi bi-pencil-square me-2"></i> Add Your Debts</h5>
+
+        <form id="debtForm">
+          <div class="row g-3">
+            <div class="col-md-3">
+              <label class="form-label">Debt Name</label>
+              <input type="text" id="debtName" class="form-control fancy-input" placeholder="e.g. Credit Card" required>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">Balance (₦)</label>
+              <input type="text" id="balance" class="form-control fancy-input currency-input" placeholder="e.g. 150000"
+                required>
+            </div>
+            <div class="col-md-2">
+              <label class="form-label">Interest Rate (%)</label>
+              <input type="number" id="rate" class="form-control fancy-input" placeholder="e.g. 22" required>
+            </div>
+            <div class="col-md-2">
+              <label class="form-label">Min. Monthly Payment (₦)</label>
+              <input type="text" id="payment" class="form-control fancy-input currency-input" placeholder="e.g. 10000"
+                required>
+            </div>
+            <div class="col-md-2 d-flex align-items-end ">
+              <button type="submit" class="btn btn-success w-100 rounded-4 text-light">Add Debt</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Debt List -->
+      <div id="debtList" class="row gy-3 mb-5"></div>
+
+
+      <div class="text-center mt-4">
+        <button class="btn btn-outline-light btn-md rounded-pill px-5 py-2" id="simulateSnowball">
+          <i class="bi bi-graph-up-arrow me-2"></i> Calculate My Debt-Free Timeline
+        </button>
+      </div>
+
+      <!-- Results -->
+      <div id="results" class="text-center mt-5 d-none">
+        <h4 class="fw-bold text-success mb-2">You’ll be debt-free in <span id="monthsToFreedom"></span> months</h4>
+        <h5 class="text-gradient mb-3">Target Date: <span id="debtFreeDate"></span></h5>
+        <p class="text-secondary small">
+          Stick to your payments, and roll over each cleared debt into the next for faster results.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="container py-5" style="background-color: #000000;">
+    <div class="row g-4">
+
+      <!-- Card 1 -->
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="card text-white bg-dark h-100 border-0 rounded-4 shadow-sm">
+          <div class="card-body d-flex flex-column justify-content-between">
+            <h5 class="card-title fw-bold">Track Your Debt</h5>
+            <p class="card-text text-light">Get a full overview of what you owe, to whom, and what to prioritize.</p>
+            <a href="#" class="btn btn-outline-light mt-3 w-100 rounded-5">View Tracker</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="card text-white bg-secondary h-100 border-0 rounded-4 shadow-sm">
+          <div class="card-body d-flex flex-column justify-content-between">
+            <h5 class="card-title fw-bold">Repayment Plans</h5>
+            <p class="card-text text-light">Set up weekly or monthly repayment goals based on your income.</p>
+            <a href="#" class="btn btn-outline-light mt-3 w-100 rounded-5">Create Plan</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="card text-white bg-dark h-100 border-0 rounded-4 shadow-sm">
+          <div class="card-body d-flex flex-column justify-content-between">
+            <h5 class="card-title fw-bold">Expert Guidance</h5>
+            <p class="card-text text-light">Speak with a financial advisor and get personalized debt advice.</p>
+            <a href="#" class="btn btn-outline-light mt-3 w-100 rounded-5">Get Support</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <%- include ('partials/footer') %>
